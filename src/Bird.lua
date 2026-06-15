@@ -3,7 +3,7 @@ Bird= Class{}
 local GRAVITY = 17
 
 function Bird:init()
-    self.image = love.graphics.newImage('bird.png')
+    self.image = love.graphics.newImage('assets/images/bird.png')
     self.width = self.image:getWidth()
     self.height = self.image:getHeight()
 

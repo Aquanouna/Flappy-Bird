@@ -1,11 +1,11 @@
-push = require 'push'
+push = require 'lib.push'
 
-Class =require 'class'
-require 'Bird'
-require 'Pipe'
-require 'PipePair'
+Class =require 'lib.class'
+require 'src.Bird'
+require 'src.Pipe'
+require 'src.PipePair'
 
-require 'StateMachine'
+require 'src.StateMachine'
 require 'states/BaseState'
 require 'states/CountDownState'
 require 'states/PlayState'
@@ -19,10 +19,10 @@ WINDOW_HEIGHT = 720
 VIRTUAL_WIDTH = 512
 VIRTUAL_HEIGHT = 288
 
-local background = love.graphics.newImage('background.png')
+local background = love.graphics.newImage('assets/images/background.png')
 local backgroundScroll = 0
 
-local ground = love.graphics.newImage('ground.png')
+local ground = love.graphics.newImage('assets/images/ground.png')
 local groundScroll = 0
 
 local BACKGROUND_SCROLL_SPEED = 30
@@ -35,20 +35,20 @@ function love.load()
 
     love.window.setTitle('Flappy Bird')
 
-    smallFont =love.graphics.newFont('font.ttf',8)
-    mediumFont = love.graphics.newFont('flappy.ttf',14)
-    flappyFont = love.graphics.newFont('flappy.ttf',28)
-    hugeFont = love.graphics.newFont('flappy.ttf',56)
+    smallFont =love.graphics.newFont('assets/fonts/font.ttf',8)
+    mediumFont = love.graphics.newFont('assets/fonts/flappy.ttf',14)
+    flappyFont = love.graphics.newFont('assets/fonts/flappy.ttf',28)
+    hugeFont = love.graphics.newFont('assets/fonts/flappy.ttf',56)
     love.graphics.setFont(flappyFont)
 
     sounds = {
-        ['jump'] = love.audio.newSource('jump.wav', 'static'),
-        ['explosion'] = love.audio.newSource('explosion.wav', 'static'),
-        ['hurt'] = love.audio.newSource('hurt.wav', 'static'),
-        ['score'] = love.audio.newSource('score.wav', 'static'),
-        ['countdown'] = love.audio.newSource('countdown.wav', 'static'),
-        ['start'] = love.audio.newSource('start.wav', 'static'),
-        ['music'] = love.audio.newSource('music.mp3', 'static')
+        ['jump'] = love.audio.newSource('assets/sounds/jump.wav', 'static'),
+        ['explosion'] = love.audio.newSource('assets/sounds/explosion.wav', 'static'),
+        ['hurt'] = love.audio.newSource('assets/sounds/hurt.wav', 'static'),
+        ['score'] = love.audio.newSource('assets/sounds/score.wav', 'static'),
+        ['countdown'] = love.audio.newSource('assets/sounds/countdown.wav', 'static'),
+        ['start'] = love.audio.newSource('assets/sounds/start.wav', 'static'),
+        ['music'] = love.audio.newSource('assets/sounds/music.mp3', 'static')
     }
 
     sounds['music']:setLooping(true)

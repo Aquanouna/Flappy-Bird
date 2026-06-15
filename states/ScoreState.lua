@@ -1,9 +1,9 @@
 ScoreState = Class{__includes = 'BaseState' }
 
 local medals = {
-    gold = love.graphics.newImage('gold.png'),
-    silver = love.graphics.newImage('silver.png'),
-    bronze = love.graphics.newImage('bronze.png')
+    gold = love.graphics.newImage('assets/images/gold.png'),
+    silver = love.graphics.newImage('assets/images/silver.png'),
+    bronze = love.graphics.newImage('assets/images/bronze.png')
 }
 
 function ScoreState:enter(params)
